@@ -33,7 +33,7 @@ class VenueManager {
   }
   
   def reload(): Unit = {
-	val faces: FacesContext = FacesContext.getCurrentInstance
+	var faces: FacesContext = FacesContext.getCurrentInstance
 	
     venues = em.createQuery("SELECT v FROM Venue v", classOf[Venue]).getResultList()
     logger.info("Venues: {}", venues.length)
