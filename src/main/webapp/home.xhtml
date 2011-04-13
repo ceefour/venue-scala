@@ -6,10 +6,10 @@
    xmlns:p="http://primefaces.prime.com.tr/ui"
    template="/WEB-INF/templates/default.xhtml">
    <ui:define name="content">
-      <h1>Hello World!</h1>
-      <p>Your CDI bean <code>HelloWorld</code> says <span style="color: blue;">#{helloWorld.text}</span> using the Unified EL.</p>
+      <h1>Venues</h1>
       <h:form>
-      	  <p:commandLink value="Refresh" actionListener="#{venueManager.reload()}" update="venuesTable,growl" />
+      	  <p><p:commandLink value="Refresh" actionListener="#{venueManager.reload()}" update="venuesTable,growl" /></p>
+      	  <p><p:inputText value="#{venuesPage.venueName}" /><p:commandButton value="Add" actionListener="#{venueManager.createVenue(venuesPage.venueName)}" update="venuesTable,growl" /></p>
 	      <p:dataTable id="venuesTable" value="#{venueManager.venues}" var="venue">
 	      	<p:column headerText="ID">
 	      		#{venue.id}

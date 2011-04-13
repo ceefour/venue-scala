@@ -114,6 +114,16 @@
          <scope>provided</scope>
       </dependency>
 
+	<dependency>
+	   <groupId>org.jboss.seam.persistence</groupId>
+	   <artifactId>seam-persistence-api</artifactId>
+	</dependency>
+	<dependency>
+	   <groupId>org.jboss.seam.persistence</groupId>
+	   <artifactId>seam-persistence-impl</artifactId>
+	   <scope>runtime</scope>
+	</dependency>
+
       <!-- Optional, but highly recommended. -->
       <dependency>
          <groupId>org.testng</groupId>
