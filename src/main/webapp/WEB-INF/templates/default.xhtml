@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
    xmlns:h="http://java.sun.com/jsf/html"
    xmlns:ui="http://java.sun.com/jsf/facelets"
-   xmlns:f="http://java.sun.com/jsf/core">
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:p="http://primefaces.prime.com.tr/ui">
    <f:view contentType="text/html">
 	   <h:head>
 	      <title>Java EE 6 Starter Application</title>
@@ -11,6 +12,7 @@
 	      <h:outputStylesheet name="css/screen.css"/>
 	   </h:head>
 	   <h:body>
+	      <p:growl id="growl" />
 	      <div id="container">
 	         <div id="content">
 	            <div id="sidebar">

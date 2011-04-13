@@ -11,6 +11,7 @@ import javax.inject._
 import javax.annotation._
 import org.slf4j._
 import javax.persistence._
+import javax.faces.application._
 import javax.faces.context._
 
 /**
@@ -33,9 +34,9 @@ class VenueManager {
   }
   
   def reload(): Unit = {
-	var faces: FacesContext = FacesContext.getCurrentInstance
-	
+	val faces = FacesContext.getCurrentInstance
     venues = em.createQuery("SELECT v FROM Venue v", classOf[Venue]).getResultList()
+    faces.addMessage(null, new FacesMessage("Reloaded, got "+ venues.length + " venues"))
     logger.info("Venues: {}", venues.length)
   }
   

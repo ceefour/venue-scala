@@ -9,7 +9,7 @@
       <h1>Hello World!</h1>
       <p>Your CDI bean <code>HelloWorld</code> says <span style="color: blue;">#{helloWorld.text}</span> using the Unified EL.</p>
       <h:form>
-      	  <p:commandLink value="Refresh" actionListener="#{venueManager.reload()}" update="venuesTable" />
+      	  <p:commandLink value="Refresh" actionListener="#{venueManager.reload()}" update="venuesTable,growl" />
 	      <p:dataTable id="venuesTable" value="#{venueManager.venues}" var="venue">
 	      	<p:column headerText="ID">
 	      		#{venue.id}
