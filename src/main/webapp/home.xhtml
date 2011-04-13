@@ -3,9 +3,21 @@
    xmlns:ui="http://java.sun.com/jsf/facelets"
    xmlns:f="http://java.sun.com/jsf/core"
    xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:p="http://primefaces.prime.com.tr/ui"
    template="/WEB-INF/templates/default.xhtml">
    <ui:define name="content">
       <h1>Hello World!</h1>
       <p>Your CDI bean <code>HelloWorld</code> says <span style="color: blue;">#{helloWorld.text}</span> using the Unified EL.</p>
+      <h:form>
+      	  <p:commandLink value="Refresh" actionListener="#{venueManager.reload()}" update="venuesTable" />
+	      <p:dataTable id="venuesTable" value="#{venueManager.venues}" var="venue">
+	      	<p:column headerText="ID">
+	      		#{venue.id}
+	      	</p:column>
+	      	<p:column headerText="Name">
+	      		#{venue.name}
+	      	</p:column>
+	      </p:dataTable>
+      </h:form>
    </ui:define>
 </ui:composition>
