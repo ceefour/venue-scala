@@ -31,11 +31,6 @@
 			<name>java.net Maven 2 Repository</name>
 			<url>http://download.java.net/maven/2</url>
 		</repository>
-		<repository>
-			<id>scala-tools.org</id>
-			<name>Scala-Tools Maven2 Repository</name>
-			<url>http://scala-tools.org/repo-releases</url>
-		</repository>
 	</repositories>
 
    <dependencyManagement>
@@ -50,16 +45,9 @@
         <version>2.0.5-b02</version>
         <scope>provided</scope>
       </dependency>
-    <dependency>
-      <groupId>org.scala-lang</groupId>
-      <artifactId>scala-library</artifactId>
-      <version>${scala.version}</version>
-    </dependency>
 </dependencies>
    <build>
       <finalName>${artifactId}</finalName>
-    <sourceDirectory>src/main/scala</sourceDirectory>
-    <testSourceDirectory>src/test/scala</testSourceDirectory>
       <plugins>
          <!-- Compiler plugin enforces Java 1.6 compatiblity -->
          <plugin>
@@ -71,28 +59,6 @@
             </configuration>
          </plugin>
 
-         
-      <plugin>
-        <groupId>org.scala-tools</groupId>
-        <artifactId>maven-scala-plugin</artifactId>
-        <version>2.15.2</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>compile</goal>
-              <goal>testCompile</goal>
-            </goals>
-            <configuration>
-              <args>
-                <arg>-make:transitive</arg>
-                <arg>-dependencyfile</arg>
-                <arg>${project.build.directory}/.scala_dependencies</arg>
-              </args>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-         
       </plugins>
    </build>
 </project>
