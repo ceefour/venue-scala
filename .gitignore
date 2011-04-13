@@ -1,0 +1,6 @@
+target
+.gradle
+.project
+.classpath
+.settings
+.scala_dependencies
